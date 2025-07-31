@@ -107,7 +107,7 @@ namespace Tikra {
                 developer_name = "AnmiTaliDev",
                 version = "1.0.0",
                 comments = "A simple clock application for AetherDE",
-                copyright = "© 2024 AnmiTaliDev",
+                copyright = "© 2025 AnmiTaliDev",
                 license_type = License.GPL_3_0,
                 website = "https://github.com/NurOS-Linux/tikra"
             };
