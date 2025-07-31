@@ -105,7 +105,7 @@ namespace Tikra {
                 application_name = "Tikra",
                 application_icon = "org.aether.tikra",
                 developer_name = "AnmiTaliDev",
-                version = "1.0.0",
+                version = "0.2.0",
                 comments = "A simple clock application for AetherDE",
                 copyright = "© 2025 AnmiTaliDev",
                 license_type = License.GPL_3_0,
