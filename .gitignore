@@ -1,3 +1,95 @@
-apg/
-build
-*.apg
+# Build directories
+build/
+builddir/
+_build/
+
+# Meson files
+meson-logs/
+meson-private/
+compile_commands.json
+
+# Generated files
+*.gresource
+*.gresource.c
+*.gresource.h
+ui/*.ui
+
+# Compiled binaries
+tikra
+src/tikra
+
+# C object files
+*.o
+*.so
+*.so.*
+*.a
+
+# Generated C files from Vala
+*.c
+*.h
+!src/*.h
+
+# Desktop files (generated)
+*.desktop
+
+# Backup files
+*~
+*.bak
+*.orig
+*.rej
+*.swp
+*.tmp
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+.project
+.cproject
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Package files
+*.deb
+*.rpm
+*.tar.gz
+*.tar.xz
+*.zip
+
+# Log files
+*.log
+
+# Translation files (if added later)
+po/*.mo
+po/POTFILES
+po/stamp-po
+
+# Schema compiled files
+gschemas.compiled
+
+# Flatpak build files
+.flatpak-builder/
+repo/
+
+# AppImage build files
+*.AppImage
+*.AppDir/
+
+# Test files
+test-results/
+coverage/
+
+# Documentation build files
+docs/_build/
+docs/build/
+
+# Local configuration
+local.conf
+user.conf

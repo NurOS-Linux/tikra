@@ -1,0 +1,54 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $TikraMainWindow : Adw.ApplicationWindow {
+  default-width: 400;
+  default-height: 300;
+  title: "Tikra";
+
+  Adw.HeaderBar header_bar {
+    title-widget: Adw.WindowTitle {
+      title: "Tikra";
+      subtitle: "Clock";
+    };
+
+    [end]
+    MenuButton {
+      icon-name: "open-menu-symbolic";
+      tooltip-text: "Main Menu";
+      menu-model: main_menu;
+    }
+  }
+
+  content: Box {
+    orientation: vertical;
+    spacing: 12;
+    margin-top: 48;
+    margin-bottom: 48;
+    margin-start: 24;
+    margin-end: 24;
+    halign: center;
+    valign: center;
+
+    Label time_label {
+      styles ["title-1", "numeric"]
+    }
+
+    Label date_label {
+      styles ["title-4"]
+    }
+  };
+}
+
+menu main_menu {
+  section {
+    item {
+      label: "About Tikra";
+      action: "app.about";
+    }
+    item {
+      label: "Quit";
+      action: "app.quit";
+    }
+  }
+}

@@ -1,53 +1,42 @@
-project(
-    'aether-tikra',
-    'cpp',
+project('tikra',
+    ['vala', 'c'],
     version: '1.0.0',
-    default_options: [
-        'cpp_std=c++17',
-        'warning_level=2',
-        'buildtype=debugoptimized'
-    ]
+    license: 'GPL-3.0',
+    meson_version: '>= 0.56.0'
 )
 
-# Qt6 dependencies
-qt6 = import('qt6')
-qt6_deps = [
-    dependency('qt6', modules: ['Core', 'Widgets', 'Gui'])
-]
+gnome = import('gnome')
+i18n = import('i18n')
 
-# Include directories
-inc_dirs = include_directories('include')
+vala_version_required = '0.56.0'
+vala = meson.get_compiler('vala')
 
-# Application sources
-tikra_sources = files(
-    'src/main.cpp',
-    'src/tikra.cpp'
+if not vala.version().version_compare('>=' + vala_version_required)
+    error('Vala version @0@ or newer is required.'.format(vala_version_required))
+endif
+
+glib_required = '2.66.0'
+gtk_required = '4.10.0'
+libadwaita_required = '1.4.0'
+
+glib_dep = dependency('glib-2.0', version: '>=' + glib_required)
+gobject_dep = dependency('gobject-2.0', version: '>=' + glib_required)
+gio_dep = dependency('gio-2.0', version: '>=' + glib_required)
+gtk_dep = dependency('gtk4', version: '>=' + gtk_required)
+libadwaita_dep = dependency('libadwaita-1', version: '>=' + libadwaita_required)
+
+app_id = 'org.aether.tikra'
+
+add_project_arguments(
+    '--target-glib=@0@'.format(glib_required),
+    language: 'vala'
 )
 
-tikra_headers = files(
-    'include/tikra.hpp'
-)
+subdir('data')
+subdir('src')
 
-# MOC processing
-tikra_moc = qt6.compile_moc(
-    headers: tikra_headers,
-    dependencies: qt6_deps,
-    include_directories: inc_dirs
+gnome.post_install(
+    glib_compile_schemas: true,
+    gtk_update_icon_cache: true,
+    update_desktop_database: true,
 )
-
-# Main executable
-executable(
-    'aether-tikra',
-    tikra_sources,
-    tikra_moc,
-    include_directories: inc_dirs,
-    dependencies: qt6_deps,
-    install: true
-)
-
-# Build summary
-summary({
-    'Project': meson.project_name(),
-    'Version': meson.project_version(),
-    'Qt6 version': qt6_deps[0].version(),
-}, section: 'Aether Tikra')

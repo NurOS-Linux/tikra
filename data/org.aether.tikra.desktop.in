@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Tikra
+Comment=A simple clock application for AetherDE
+Exec=tikra
+Icon=org.aether.tikra
+Terminal=false
+Type=Application
+Categories=GTK;Utility;Clock;
+StartupNotify=true
+Keywords=time;clock;watch;

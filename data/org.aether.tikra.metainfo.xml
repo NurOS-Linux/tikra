@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.aether.tikra</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Tikra</name>
+  <summary>A simple clock application for AetherDE</summary>
+  <description>
+    <p>
+      Tikra is a simple and elegant clock application designed for the AetherDE desktop environment.
+      It displays the current time and date in a clean, easy-to-read interface that follows GNOME Human Interface Guidelines.
+    </p>
+    <p>
+      Features:
+    </p>
+    <ul>
+      <li>Real-time clock display with seconds precision</li>
+      <li>Current date display</li>
+      <li>Clean and minimalist design</li>
+      <li>Follows GNOME HIG design patterns</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">org.aether.tikra.desktop</launchable>
+  <url type="homepage">https://github.com/NurOS-Linux/tikra</url>
+  <url type="bugtracker">https://github.com/NurOS-Linux/tikra/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main window showing current time and date</caption>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.0.0" date="2024-12-31">
+      <description>
+        <p>Initial release of Tikra</p>
+        <ul>
+          <li>Real-time clock display</li>
+          <li>Date display</li>
+          <li>Clean GNOME-style interface</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+  <developer_name>AnmiTaliDev</developer_name>
+  <update_contact>anmitali198@gmail.com</update_contact>
+  <categories>
+    <category>Utility</category>
+    <category>Clock</category>
+  </categories>
+  <keywords>
+    <keyword>time</keyword>
+    <keyword>clock</keyword>
+    <keyword>watch</keyword>
+  </keywords>
+</component>

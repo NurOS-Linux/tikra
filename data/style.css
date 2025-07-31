@@ -1,0 +1,105 @@
+/* Tikra Clock Application Custom Styles */
+
+/* Time display styling */
+.time-display {
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+}
+
+.time-large {
+  font-size: 3.5em;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+/* Elegant card styling */
+.card {
+  border-radius: 16px;
+  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover {
+  box-shadow: 0 12px 48px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+/* Button improvements */
+.pill {
+  min-width: 120px;
+  min-height: 40px;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: all 200ms ease;
+}
+
+.pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+/* List improvements */
+.boxed-list row {
+  padding: 16px;
+  border-radius: 12px;
+  margin: 4px 0;
+  transition: all 150ms ease;
+}
+
+.boxed-list row:hover {
+  background: rgba(255,255,255,0.05);
+  transform: translateX(4px);
+}
+
+/* Typography enhancements */
+.heading {
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.caption-heading {
+  font-weight: 600;
+  font-size: 0.9em;
+  opacity: 0.7;
+}
+
+.dim-label {
+  opacity: 0.7;
+}
+
+/* Numeric displays */
+.numeric {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Accent colors */
+.accent {
+  color: @accent_color;
+  font-weight: 600;
+}
+
+/* Animation for state changes */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+.error {
+  animation: pulse 1s ease-in-out infinite;
+  color: @error_color;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .time-large {
+    font-size: 2.5em;
+  }
+  
+  .pill {
+    min-width: 100px;
+    min-height: 36px;
+  }
+}
